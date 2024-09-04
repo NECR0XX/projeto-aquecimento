@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+body {
+    margin: 0; /* Remove as margens padrão */
+    padding-top: 95px; /* Adiciona espaço no topo para a barra de navegação */
+    background-color: #f4f4f4; /* Cor de fundo da página */
+    background: #FFFFFF; /* Cor de fundo */
+}
+
+.barra {
+    background: #5D72D0; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    width: 100%; /* Ocupa 100% da largura da tela */
+    position: fixed; /* Fica fixa no topo da tela */
+    top: 0; /* Alinha no topo */
+    left: 0; /* Alinha à esquerda */
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 95px; /* Define a altura da barra */
+    box-sizing: border-box; /* Inclui o padding e borda no cálculo da largura */
+    z-index: 1000; /* Garante que a barra fique acima do conteúdo */
+}
+
+.cadastro {
+    font-size: 2rem; /* Tamanho da fonte padrão */
+    font-weight: bold; /* Torna a fonte negrita */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao texto */
+    font-family: "Jockey One", sans-serif;
+}
+
+/* Media Query para telas pequenas */
+@media (max-width: 390px) {
+    .barra {
+        padding: 10px; /* Ajusta o padding para telas menores */
+        height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+    }
+
+    .cadastro {
+        font-size: 1.6rem; /* Ajusta o tamanho da fonte para telas menores */
+    }
+}
+
+.container, .container2 {
+    display: flex; /* Usa Flexbox para alinhar os quadrados lado a lado */
+    gap: 30px; /* Espaço entre os quadrados */
+    justify-content: center; /* Centraliza os quadrados horizontalmente */
+    width: 80%; /* Ajusta a largura do contêiner conforme necessário */
+    max-width: 1200px; /* Define um limite máximo para a largura do contêiner */
+    margin: 20px auto; /* Adiciona margem no topo e centraliza o contêiner horizontalmente */
+}
+
+.crud1, .crud2, .crud3, .crud4 {
+    flex: 1; /* Permite que os quadrados ocupem o espaço disponível igualmente */
+    height: 190px; /* Altura do quadrado */
+    background-color: #F4F4F4; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    display: flex; /* Usado para centralizar o texto */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra do quadrado */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto no div */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+.crud1, .crud2 {
+    margin-top: 45%;
+}
+
+.crud3, .crud4 {
+    margin-top: 2%;
+}
+
+.jockey-one-regular {
+    font-family: "Jockey One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.imagem-esporte  {
+    width: 78%; /* Ajusta a largura da imagem para 100% do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 500px; /* Define uma largura máxima */
+}
+
+.imagem-competidores  {
+    width: 100%; /* Ajusta a largura da imagem para 100% do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 500px; /* Define uma largura máxima */
+}
+
+.imagem-treinadores  {
+    width: 87%; /* Ajusta a largura da imagem para 100% do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 500px; /* Define uma largura máxima */
+}
+
+.imagem-localidades  {
+    width: 85%; /* Ajusta a largura da imagem para 100% do elemento pai */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 500px; /* Define uma largura máxima */
+    margin-top: -1%;
+}
