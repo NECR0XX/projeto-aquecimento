@@ -1,5 +1,5 @@
 <?php
-require_once 'App/Controller/TrainerModel.php';
+require_once '../Model/TrainerModel.php';
 
 class TrainerController {
     private $trainerModel;
@@ -17,8 +17,8 @@ class TrainerController {
     }
 
     public function exibirListaTrainer() {
-        $trainer = $this->trainerModel->listarTrainer();
-        include 'C:\xampp\htdocs\projeto-aquecimento\Public\listaTrainer.php';
+        $trainers = $this->trainerModel->listarTrainer();
+        include '../../Public/listaTrainer.php';
     }
    
    

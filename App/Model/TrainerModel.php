@@ -9,7 +9,7 @@ class TrainerModel {
 
     // Método para criar Treinadores
     public function criarCadastroTrainer($name, $age, $height, $weight, $cpf, $rg) {
-        $sql = "INSERT INTO trainer (nome, age, height, weight, cpf, rg) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO trainer (name, age, height, weight, cpf, rg) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$name, $age, $height, $weight, $cpf, $rg]);
     }
