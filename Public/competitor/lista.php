@@ -48,8 +48,8 @@ if (isset($_POST['excluir_id'])) {
                             <td><?php echo $competitor['cpf']; ?></td>
                             <td><?php echo $competitor['rg']; ?></td>
                             <td><?php echo $competitor['team']; ?></td>
-                            <td><?php echo '<a href="../../App/Providers/atualizarCompetitor.php?id= . $competitor['id'] . "'><img src="" alt=""></a></td>
-                            <td><?php echo <a href=""><img src="" alt=""></a></td>
+                            <td><a href="../../App/Providers/atualizarCompetitor.php?id="><img src="" alt=""></a></td>
+                            <td> <a href=""><img src="" alt=""></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
