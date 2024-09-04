@@ -7,14 +7,14 @@ class TrainerModel {
         $this->pdo = $pdo;
     }
 
-    // Método para criar um registro de compra
+    // Método para criar Treinadores
     public function criarCadastroTrainer($name, $age, $height, $weight, $cpf, $rg) {
         $sql = "INSERT INTO trainer (nome, age, height, weight, cpf, rg) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$name, $age, $height, $weight, $cpf, $rg]);
     }
     
-    // Método para listar registros de compras
+    // Método para listar Treinadores
     public function listarTrainer() {
         $sql = "SELECT * FROM trainer";
         $stmt = $this->pdo->query($sql);
