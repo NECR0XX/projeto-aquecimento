@@ -1,6 +1,6 @@
 <?php
-require_once 'C:/xampp/htdocs/system_concessionaria/config/config.php';
-require_once 'C:/xampp/htdocs/system_concessionaria/App/Controller/LocalityController.php';
+require_once '../../DB/Config.php';
+require_once '../../App/Controller/LocalityController.php';
 
 if (isset($_GET['id_locality'])) {
     $id_locality = $_GET['id_locality'];

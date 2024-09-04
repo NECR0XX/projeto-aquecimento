@@ -1,5 +1,5 @@
 <?php
-require_once '../../Config/config.php';
+require_once '../../DB/Config.php';
 require_once '../../App/Controller/LocalityController.php';
 
 $mensagem = "";

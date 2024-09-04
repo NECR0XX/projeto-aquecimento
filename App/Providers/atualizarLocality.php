@@ -1,5 +1,5 @@
 <?php
-include '../../Config/config.php';
+require_once '../../DB/Config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_GET['id'])) {
