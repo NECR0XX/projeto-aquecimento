@@ -1,4 +1,4 @@
-$trainer<?php
+<?php
 include_once '../../DB/Config.php';
 if (!isset($_GET['id'])) {
     header('Location: ../../Public/listaTrainer.php');

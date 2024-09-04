@@ -15,7 +15,7 @@ class TrainerModel {
     }
     
     // Método para listar Treinadores
-    public function listarTrainer() {
+    public function listarTrainers() {
         $sql = "SELECT * FROM trainer";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

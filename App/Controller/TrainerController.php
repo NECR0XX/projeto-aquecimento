@@ -1,5 +1,5 @@
 <?php
-require_once '../Model/TrainerModel.php';
+require_once '..\..\App\Model\TrainerModel.php';
 
 class TrainerController {
     private $trainerModel;
@@ -12,12 +12,12 @@ class TrainerController {
         $this->trainerModel->criarCadastroTrainer($name, $age, $height, $weight, $cpf, $rg);
     }
     
-    public function listarTrainer() {
-        return $this->trainerModel->listarTrainer();
+    public function listarTrainers() {
+        return $this->trainerModel->listarTrainers();
     }
 
-    public function exibirListaTrainer() {
-        $trainers = $this->trainerModel->listarTrainer();
+    public function exibirListaTrainers() {
+        $trainers = $this->trainerModel->listarTrainers();
         include '../../Public/listaTrainer.php';
     }
    
