@@ -20,7 +20,13 @@ class TrainerController {
         $trainers = $this->trainerModel->listarTrainers();
         include '../../Public/listaTrainer.php';
     }
-   
+    public function atualizarTrainer($name, $age, $height, $weight, $cpf, $rg) {
+        $this->trainerModel->atualizarTrainer($name, $age, $height, $weight, $cpf, $rg);
+    }
+    
+    public function excluirTrainer ($id) {
+        $this->trainerModel->excluirTrainer($id);
+    }
    
 }
 ?>
