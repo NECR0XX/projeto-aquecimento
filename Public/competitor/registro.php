@@ -16,8 +16,8 @@ if (isset($_POST['name']) &&
     {
         $competitorController->criarCompetitor($_POST['name'], $_POST['age'], $_POST['gender'], $_POST['height'], $_POST['weight'], $_POST['cpf'], $_POST['rg'], $_POST['team'],);
         $mensagem = 'Registro realizado com sucesso!';
+        header('Location: #');
     }
-    $competitors = $competitorController->listarCompetitors();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,6 @@ if (isset($_POST['name']) &&
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Outro">Outro</option>
-                        <option value="Helicóptero Robinson R-44 Raven II">Helicóptero Robinson R-44 Raven II</option>
                     </select>
                 </label><br>
                 <label>
@@ -85,7 +84,8 @@ if (isset($_POST['name']) &&
                     <span>Equipe:</span><br>
                     <input type="text" name="team" required>
                 </label><br><br>
-                <button type="submit">Finalizar</button>
+                <button type="submit">Finalizar</button><br>
+                <a href="#">Voltar a página anterior</a>   
             </form>
         </section>
     </main>

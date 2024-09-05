@@ -1,58 +1,43 @@
 <?php
 require_once '../../DB/Config.php';
-require_once '../../App/Controller/CompetitorController.php';
+require_once '../../App/Controller/SportController.php';
 
-$competitorController = new competitorController($pdo);
-$competitors = $competitorController->listarCompetitors();
-
-if (isset($_POST['excluir_id'])) {
-    $competitorController->deletarCompetitor($_POST['excluir_id']);
-}
+$esporteController = new EsporteController($pdo);
+$esportes = $esporteController->listarEsportes();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
-    <title>Document</title>
+    <title>Listar Esportes</title>
 </head>
 <body>
     <header>
-        <!-- COLOCAR OQ FOR NECESSARIO AQ -->
+
     </header>
     <main>
-        <section>
+    <section>
             <h2>Listar Competidores</h2>
             <table border="1">
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Gênero</th>
-                        <th>Altura</th>
-                        <th>Peso</th>
-                        <th>CPF</th>
-                        <th>RG</th>
-                        <th>Equipes</th>
+                        <th>Categoria</th>
                         <th colspan="2">Opções</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($competitors as $competitor): ?>
+                    <?php foreach($esportes as $esporte): ?>
                         <tr>
-                            <td><?php echo $competitor['name']; ?></td>
-                            <td><?php echo $competitor['age']; ?></td>
-                            <td><?php echo $competitor['gender']; ?></td>
-                            <td><?php echo $competitor['height']; ?></td>
-                            <td><?php echo $competitor['weight']; ?></td>
-                            <td><?php echo $competitor['cpf']; ?></td>
-                            <td><?php echo $competitor['rg']; ?></td>
-                            <td><?php echo $competitor['team']; ?></td>
+                            <td><?php echo $esporte['name']; ?></td>
+                            <td><?php echo $esporte['category']; ?></td>
                             <?php
-                            echo "<td><a style='color:blue;' href='../../App/Providers/atualizarCompetitor.php?id={$competitor['id']}'><img src='../../Resources/Images/pen.png' alt='Deletar' width='25' height='25'></a></td>";
+                            echo "<td><a style='color:blue;' href='../../App/Providers/EditarSport.php?id={$esporte['id']}'><img src='../../Resources/Images/pen.png' alt='Deletar' width='25' height='25'></a></td>";
                             ?>
-                            <td><a style='color:blue;' href='#' onclick="confirmDelete(<?php echo $competitor['id']; ?>)"><img src='../../Resources/Images/trash.png' alt='Deletar' width='25' height='25'></a></td>
+                            <td><a style='color:blue;' href='#' onclick="confirmDelete(<?php echo $esporte['id']; ?>)"><img src='../../Resources/Images/trash.png' alt='Deletar' width='25' height='25'></a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
@@ -83,12 +68,12 @@ if (isset($_POST['excluir_id'])) {
                     openModal();
                     document.getElementById("confirmDeleteBtn").onclick = function() {
                         var xhr = new XMLHttpRequest();
-                        xhr.open("POST", "../../App/Providers/deletarCompetitor.php?id=" + id, true);
+                        xhr.open("POST", "../../App/Providers/ExcluirSport.php?id=" + id, true);
                         xhr.onreadystatechange = function() {
                             if (xhr.readyState == 4) {
                                 if (xhr.status == 200) {
                                     if (xhr.responseText == "success") {
-                                        window.location.href = "lista.php";
+                                        window.location.href = "ListarSports.php";
                                     } else {
                                         alert("Falha ao excluir o treinador: " + xhr.responseText);
                                     }

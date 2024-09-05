@@ -16,8 +16,8 @@ if (isset($_POST['street']) &&
 {
     $localityController->criarLocality($_POST['street'], $_POST['neighborhood'], $_POST['number'], $_POST['cep'], $_POST['city'], $_POST['state'], $_POST['country']);
     $mensagem = 'Cadastro realizado com sucesso!';
+    header('Location: #');
 }
-$localitys = $localityController->listarLocalitys();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,32 +30,58 @@ $localitys = $localityController->listarLocalitys();
     <title>Gerenciamento de Localidades</title>
 </head>
 <body>
-<div class="content-wrapper">
-    <div class="content">
-        <a class="a3" href="index.php">«</a>
+    <header>
 
-    <?php if ($mensagem): ?>
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
-                <p><?= $mensagem ?></p>
+    </header>
+    <main>
+        <section>
+        <?php if ($mensagem): ?>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                    <p><?= $mensagem ?></p>
+                </div>
             </div>
-        </div>
-        <script>
-            document.getElementById('modal').style.display = 'block';
-        </script>
-    <?php endif; ?>
-
-    <h2>Controle de Locality</h2>
-    <form method="post" enctype="multipart/form-data">
-        <input type="text" name="street" placeholder="Street" required>
-        <input type="text" name="neighborhood" placeholder="Neighborhood" required>
-        <input type="text" name="number" placeholder="Number" required>
-        <input type="text" name="cep" placeholder="CEP" required>
-        <input type="text" name="city" placeholder="City" required>
-        <input type="text" name="state" placeholder="State" required>
-        <input type="text" name="country" placeholder="Country" required>
-        <button type="submit">Adicionar</button>
-    </form>
+            <script>
+                document.getElementById('modal').style.display = 'block';
+            </script>
+        <?php endif; ?>
+        </section>
+        <section>
+            <h2>Cadastrar Localidades</h2>
+            <form method="post">
+                <label>
+                    <span>Rua:</span><br>
+                    <input type="text" name="street" required>
+                </label><br>
+                <label>
+                    <span>Bairro:</span><br>
+                    <input type="text" name="neighborhood" required>
+                </label><br>
+                <label>
+                    <span>Número:</span><br>
+                    <input type="number" name="number" required>
+                </label><br>
+                <label>
+                    <span>CEP:</span><br>
+                    <input type="number" name="cep" required>
+                </label><br>
+                <label>
+                    <span>Cidade:</span><br>
+                    <input type="text" name="city" required>
+                </label><br>
+                <label>
+                    <span>Estado:</span><br>
+                    <input type="text" name="state" required>
+                </label><br>
+                <label>
+                    <span>País:</span><br>
+                    <input type="text" name="country" required>
+                </label><br><br>
+                <button type="submit">Finalizar</button><br>
+                <a href="#">Voltar a página anterior</a>   
+            </form>
+        </section>
+    </main>
 </body>
 </html>

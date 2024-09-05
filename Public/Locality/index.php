@@ -25,51 +25,86 @@ if (isset($_POST['excluir_id_locality'])) {
 </head>
 
 <body>
+    <header>
 
-    <div class="content-wrapper">
-        <div class="content">
-            <a class="a3" href="../pg.php">«</a>
-
-            <h1>LOCALIDADES</h1>
-
-
-            <ul class="list">
-                <?php foreach ($localities as $locality): ?>
-                    <li><strong>ID:</strong> <?php echo $locality['id']; ?>
-                        - <strong>Rua:</strong> <?php echo $locality['street']; ?>
-                        - <strong>Bairro:</strong> <?php echo $locality['neighborhood']; ?>
-                        - <strong>Número:</strong> <?php echo $locality['number']; ?>
-                        - <strong>CEP:</strong> <?php echo $locality['cep']; ?>
-                        - <strong>Cidade:</strong> <?php echo $locality['city']; ?>
-                        - <strong>Estado:</strong> <?php echo $locality['state']; ?>
-                        - <strong>País:</strong> <?php echo $locality['country']; ?>
-                        
-                        <?php
-                            echo "<a class='a1' href='../../App/Providers/atualizarlocality.php?id={$locality['id']}'>editar</a> ";
-                            echo " ou ";
-                            echo "<a class='a2' href='#' onclick='confirmDelete({$locality['id']})'>excluir</a>";
-                        
-                        ?>
-
-                        <hr>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-            <br>
-
-        </div>
-    </div>
-    
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p>Tem certeza que deseja excluir o item?</p>
-            <div class="op">
-                <button class="confirm" id="confirmDeleteBtn">Sim</button>
-                <button class="close" onclick="closeModal()">Cancelar</button>
+    </header>
+    <main>
+        <section>
+            <h2>Listar Localidades</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Número</th>
+                        <th>CEP</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>País</th>
+                        <th colspan="2">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($localities as $locality): ?>
+                        <tr>
+                            <td><?php echo $locality['street']; ?></td>
+                            <td><?php echo $locality['neighborhood']; ?></td>
+                            <td><?php echo $locality['number']; ?></td>
+                            <td><?php echo $locality['cep']; ?></td>
+                            <td><?php echo $locality['city']; ?></td>
+                            <td><?php echo $locality['state']; ?></td>
+                            <td><?php echo $locality['country']; ?></td>
+                            <?php
+                            echo "<td><a style='color:blue;' href='../../App/Providers/atualizarLocality.php?id={$locality['id']}'><img src='../../Resources/Images/pen.png' alt='Deletar' width='25' height='25'></a></td>";
+                            ?>
+                            <td><a style='color:blue;' href='#' onclick="confirmDelete(<?php echo $locality['id']; ?>)"><img src='../../Resources/Images/trash.png' alt='Deletar' width='25' height='25'></a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>      
+            <a href="#">Voltar a página anterior</a>         
+        </section>
+        <section>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <p>Tem certeza que deseja excluir o item?</p>
+                    <div class="op">
+                    <button class="confirm" id="confirmDeleteBtn">Sim</button>
+                    <button class="close" onclick="closeModal()">Cancelar</button></div>
+                </div>
             </div>
-        </div>
-    </div>
-    
+            <script>
+                function openModal() {
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "block";
+                }
+            
+                function closeModal() {
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "none";
+                }
+            
+                function confirmDelete(id) {
+                    openModal();
+                    document.getElementById("confirmDeleteBtn").onclick = function() {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("POST", "../../App/Providers/deletarLocality.php?id=" + id, true);
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState == 4) {
+                                if (xhr.status == 200) {
+                                    if (xhr.responseText == "success") {
+                                        window.location.href = "index.php";
+                                    } else {
+                                        alert("Falha ao excluir o treinador: " + xhr.responseText);
+                                    }
+                                }
+                            }
+                        };
+                        xhr.send();
+                    };
+                }
+            </script>
+        </section>
+    </main>
 </body>
-
 </html>

@@ -11,8 +11,6 @@ class LocalityModel {
         $sql = "INSERT INTO locality (street, neighborhood, number, cep, city, state, country) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$street, $neighborhood, $number, $cep, $city, $state, $country]);
-        header("Location: ../../Public/Locality/index.php");
-        exit;
     }
 
     // Model para listar Localitys

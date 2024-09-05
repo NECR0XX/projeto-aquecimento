@@ -1,12 +1,12 @@
 <?php
 require_once '../../DB/Config.php';
-require_once '..\..\App\Controller\CompetitorController.php';
+require_once '..\..\App\Controller\TrainerController.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $competitorController = new CompetitorController($pdo);
+    $trainerController = new TrainerController($pdo);
 
     try {
-        $competitorController->deletarCompetitor($id);
+        $trainerController->excluirTrainer($id);
         echo "success";
     } catch (Exception $e) {
         echo "error";

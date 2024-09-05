@@ -1,5 +1,5 @@
 <?php
-require_once '../App/Model/SportModel.php';
+require_once 'C:\xampp\htdocs\projeto-aquecimento\App\Model\SportModel.php';
 
 class EsporteController {
     private $esporteModel;

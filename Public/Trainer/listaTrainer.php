@@ -1,12 +1,12 @@
 <?php
 require_once '../../DB/Config.php';
-require_once '../../App/Controller/CompetitorController.php';
+require_once '../../App/Controller/TrainerController.php';
 
-$competitorController = new competitorController($pdo);
-$competitors = $competitorController->listarCompetitors();
+$trainerController = new trainerController($pdo);
+$trainers = $trainerController->listarTrainers();
 
 if (isset($_POST['excluir_id'])) {
-    $competitorController->deletarCompetitor($_POST['excluir_id']);
+    $trainerController->deletarTrainer($_POST['excluir_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -19,45 +19,44 @@ if (isset($_POST['excluir_id'])) {
 </head>
 <body>
     <header>
-        <!-- COLOCAR OQ FOR NECESSARIO AQ -->
+
     </header>
     <main>
         <section>
-            <h2>Listar Competidores</h2>
+            <h2>Listar Treinadores</h2>
             <table border="1">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>Idade</th>
-                        <th>Gênero</th>
                         <th>Altura</th>
                         <th>Peso</th>
-                        <th>CPF</th>
+                        <th>Cpf</th>
                         <th>RG</th>
-                        <th>Equipes</th>
                         <th colspan="2">Opções</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach($competitors as $competitor): ?>
+                <?php foreach ($trainers as $trainer): ?>
+                    <tbody>
                         <tr>
-                            <td><?php echo $competitor['name']; ?></td>
-                            <td><?php echo $competitor['age']; ?></td>
-                            <td><?php echo $competitor['gender']; ?></td>
-                            <td><?php echo $competitor['height']; ?></td>
-                            <td><?php echo $competitor['weight']; ?></td>
-                            <td><?php echo $competitor['cpf']; ?></td>
-                            <td><?php echo $competitor['rg']; ?></td>
-                            <td><?php echo $competitor['team']; ?></td>
+                            <td><?php echo $trainer['id']; ?></td>
+                            <td><?php echo $trainer['name']; ?></td>
+                            <td><?php echo $trainer['age']; ?></td>
+                            <td><?php echo $trainer['height']; ?></td>
+                            <td><?php echo $trainer['weight']; ?></td>
+                            <td><?php echo $trainer['cpf']; ?></td>
+                            <td><?php echo $trainer['rg']; ?></td>
                             <?php
-                            echo "<td><a style='color:blue;' href='../../App/Providers/atualizarCompetitor.php?id={$competitor['id']}'><img src='../../Resources/Images/pen.png' alt='Deletar' width='25' height='25'></a></td>";
+                            echo "<td><a style='color:blue;' href='../../App/Providers/atualizarTrainer.php?id={$trainer['id']}'><img src='../../Resources/Images/pen.png' alt='Deletar' width='25' height='25'></a></td>";
                             ?>
-                            <td><a style='color:blue;' href='#' onclick="confirmDelete(<?php echo $competitor['id']; ?>)"><img src='../../Resources/Images/trash.png' alt='Deletar' width='25' height='25'></a></td>
-                        </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>      
-            <a href="#">Voltar a página anterior</a>         
+                            <td><a style='color:blue;' href='#' onclick="confirmDelete(<?php echo $trainer['id']; ?>)"><img src='../../Resources/Images/trash.png' alt='Deletar' width='25' height='25'></a></td>
+                            </tr>
+                            
+                <?php endforeach; ?>
+                <tbody>
+            </table>
+            <a href="#">Voltar a página anterior</a>
         </section>
         <section>
             <div id="myModal" class="modal">
@@ -83,12 +82,12 @@ if (isset($_POST['excluir_id'])) {
                     openModal();
                     document.getElementById("confirmDeleteBtn").onclick = function() {
                         var xhr = new XMLHttpRequest();
-                        xhr.open("POST", "../../App/Providers/deletarCompetitor.php?id=" + id, true);
+                        xhr.open("POST", "../../App/Providers/deletarTrainer.php?id=" + id, true);
                         xhr.onreadystatechange = function() {
                             if (xhr.readyState == 4) {
                                 if (xhr.status == 200) {
                                     if (xhr.responseText == "success") {
-                                        window.location.href = "lista.php";
+                                        window.location.href = "listaTrainer.php";
                                     } else {
                                         alert("Falha ao excluir o treinador: " + xhr.responseText);
                                     }

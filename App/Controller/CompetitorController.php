@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\aquecimento\App\Model\CompetitorModel.php';
+require_once 'C:\xampp\htdocs\projeto-aquecimento\App\Model\CompetitorModel.php';
 
 class CompetitorController {
     private $competitorModel;
@@ -18,7 +18,7 @@ class CompetitorController {
 
     public function exibirListaCompetitors() {
         $competitors = $this->competitorModel->listarCompetitors();
-        include 'C:\xampp\htdocs\aquecimento\Public\competitor\lista.php';
+        include '../../Public/Competitor/lista.php';
     }
 
     public function atualizarCompetitor($id, $name, $age, $gender, $height, $weight, $cpf, $rg, $team) {

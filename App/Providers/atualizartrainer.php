@@ -1,7 +1,29 @@
 <?php
 include_once '../../DB/Config.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!isset($_GET['id'])) {
+        header('Location: ../../Public/Trainer/listaTrainer.php');
+        exit;
+    }
+    
+    $id = $_GET['id'];
+
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $height = $_POST['height'];
+    $weight = $_POST['weight'];
+    $cpf = $_POST['cpf'];
+    $rg = $_POST['rg'];
+
+    $stmt = $pdo->prepare('UPDATE trainer SET name = ?, age = ?, height = ?, weight = ?, cpf = ?, rg = ? WHERE id = ?');
+    $stmt->execute([$name, $age, $height, $weight, $cpf, $rg, $id]);
+    header('Location: ../../Public/Trainer/listaTrainer.php');
+    exit;
+}
+
 if (!isset($_GET['id'])) {
-    header('Location: ../../Public/listaTrainer.php');
+    header('Location: ../../Public/Trainer/listaTrainer.php');
     exit;
 }
 $id = $_GET['id'];
@@ -11,7 +33,7 @@ $stmt->execute([$id]);
 $appointment = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$appointment) {
-    header('Location: ../../Public/listaTrainer.php');
+    header('Location: ../../Public/Trainer/listaTrainer.php');
     exit;   
 }
 $name = $appointment['name'];
@@ -28,82 +50,34 @@ $rg = $appointment['rg'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar</title>
-    <script type="text/javascript">
-        function confirmDelete(event, id) {
-            event.preventDefault();
-            var modal = document.getElementById('confirmModal');
-            var confirmBtn = document.getElementById('confirmBtn');
-            confirmBtn.setAttribute('data-id', id); // Set the ID on the button as a data attribute
-            modal.style.display = 'block';
-            confirmBtn.onclick = function() {
-                window.location.href = '../App/Controller/deletartrainer.php?id=' + id;
-            }
-        }
-
-        function closeModal() {
-            var modal = document.getElementById('confirmModal');
-            modal.style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            var modal = document.getElementById('confirmModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 </head>
 <body>
-<form method="post">
-<label for="nome">Nome:</label>
-    <input type="text" name="name" value="<?php echo $name; ?>" required></br>
+    <main>
+        <section>
+            <h2>Editar Treinador</h2>
+            <form method="post">
+                <label for="name">Nome:</label><br>
+                <input type="text" name="name" value="<?php echo $name; ?>" required></br>
 
-    <label for="age">Idade:</label>
-    <input type="number" name="age" value="<?php echo $age; ?>" required></br>
+                <label for="age">Idade:</label><br>
+                <input type="number" name="age" value="<?php echo $age; ?>" required></br>
 
-    <label for="age">Altura:</label>
-    <input type="number" name="height" value="<?php echo $height; ?>" required></br>
+                <label for="height">Altura:</label><br>
+                <input type="number" name="height" value="<?php echo $height; ?>" required></br>
 
-    <label for="age">Peso:</label>
-    <input type="number" name="weight" value="<?php echo $weight; ?>" required></br>
+                <label for="weight">Peso:</label><br>
+                <input type="number" name="weight" value="<?php echo $weight; ?>" required></br>
 
-    <label for="age">CPF:</label>
-    <input type="number" name="cpf" value="<?php echo $cpf; ?>" required></br>
+                <label for="cpf">CPF:</label><br>
+                <input type="number" name="cpf" value="<?php echo $cpf; ?>" required></br>
 
-    <label for="age">RG:</label>
-    <input type="number" name="rg" value="<?php echo $rg; ?>" required></br>
+                <label for="rg">RG:</label><br>
+                <input type="number" name="rg" value="<?php echo $rg; ?>" required></br><br>
 
-    <button type="submit">Atualizar</button>
-
-    <a class= "lixo" id= "delete" href="#" onclick="confirmDelete(event, '<?php echo htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'); ?>')"><img src="<?php echo '' ?>" width="30px" height= "30px"></a>
-</form>
-
-<!-- Modal de confirmação -->
-<div id="confirmModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">DriveX</div>
-        <p>Você tem certeza que deseja deletar esta nota fiscal?</p>
-        <div class="modal-footer">
-            <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
-            <button class="btn-confirm" id="confirmBtn">Confirmar</button>
-        </div>
-    </div>
-</div>
+                <button type="submit">Atualizar</button><br>
+                <a href="../../Public/Trainer/listaTrainer.php">Voltar à página anterior</a>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $height = $_POST['height'];
-    $weight = $_POST['weight'];
-    $cpf = $_POST['cpf'];
-    $rg = $_POST['rg'];
-    
-
-    //Validação dos dados do formulário aqui
-    $stmt = $pdo->prepare('UPDATE trainer SET name = ?, age = ?, height = ?, weight = ?, cpf = ?, rg = ? WHERE id = ?');
-    $stmt->execute([$name, $age, $height, $weight, $cpf, $rg, $id]);
-    header('Location: listaTrainer.php');
-    exit;
-}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../Public/Css/cadEsporte.css">
+    <link rel="stylesheet" href="../Resources/Css/cadEsporte.css">
 </head>
 <body>
     <div class="barra">
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="crud1">
             <a href="link-para-crud1.html" class="link-container">
-                <img src="../../Public/Images/esportes.png" class="imagem-esporte">
+                <img src="../Resources/Images/esportes.png" class="imagem-esporte">
             </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="crud2">
             <a href="link-para-crud2.html" class="link-container">
-                <img src="../../Public/Images/competidores.png" class="imagem-competidores">
+                <img src="../Resources/Images/competidores.png" class="imagem-competidores">
             </a>
         </div>  
     </div>
