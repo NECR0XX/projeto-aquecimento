@@ -27,12 +27,21 @@ if (isset($_POST['street']) &&
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
     <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
     <link rel="stylesheet" href="../../Resources/Css/stylereg.css">
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
     <title>Gerenciamento de Localidades</title>
 </head>
 <body>
     <header>
-
     </header>
+    
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+            cadastrar localidades
+        </div>
     <main>
         <section>
         <?php if ($mensagem): ?>
@@ -48,7 +57,6 @@ if (isset($_POST['street']) &&
         <?php endif; ?>
         </section>
         <section>
-            <h2>Cadastrar Localidades</h2>
             <form method="post">
                 <label>
                     <span>Rua:</span><br>
@@ -79,7 +87,9 @@ if (isset($_POST['street']) &&
                     <input type="text" name="country" required>
                 </label><br><br>
                 <button type="submit">Finalizar</button><br>
-                <a href="#">Voltar a página anterior</a>   
+            <div class="paginaanterior">
+                <a href="#">Voltar à página anterior</a>
+            </div>
             </form>
         </section>
     </main>

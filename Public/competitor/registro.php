@@ -25,12 +25,21 @@ if (isset($_POST['name']) &&
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
     <header>
-        <!-- COLOCAR OQ FOR NECESSARIO AQ -->
     </header>
-    <main>
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+            cadastrar competidor
+        </div>
+
+        <main>
         <section>
             <?php if ($mensagem): ?>
                 <div id="modal" class="modal">
@@ -45,49 +54,52 @@ if (isset($_POST['name']) &&
             <?php endif; ?>
         </section>
         <section>
-            <h2>Cadastrar Competidor</h2>
-            <form method="post">
-                <label>
-                    <span>Nome:</span><br>
-                    <input type="text" name="name" required>
-                </label><br>
-                <label>
-                    <span>Idade:</span><br>
-                    <input type="number" name="age" required>
-                </label><br>
-                <label>
-                    <span>Gênero:</span><br>
-                    <select name="gender">
-                        <option value="">Selecione a opção</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                    </select>
-                </label><br>
-                <label>
-                    <span>Altura:</span><br>
-                    <input type="number" name="height" required>
-                </label><br>
-                <label>
-                    <span>Peso:</span><br>
-                    <input type="number" name="weight" required>
-                </label><br>
-                <label>
-                    <span>CPF:</span><br>
-                    <input type="number" name="cpf" required>
-                </label><br>
-                <label>
-                    <span>RG:</span><br>
-                    <input type="number" name="rg" required>
-                </label><br>
-                <label>
-                    <span>Equipe:</span><br>
-                    <input type="text" name="team" required>
-                </label><br><br>
-                <button type="submit">Finalizar</button><br>
-                <a href="#">Voltar a página anterior</a>   
-            </form>
-        </section>
+    <form method="post">
+        <label>
+            <span>Nome:</span><br>
+            <input type="text" name="name" required>
+        </label><br>
+        <label>
+            <span>Idade:</span><br>
+            <input type="number" name="age" required>
+        </label><br>
+        <label>
+            <span>Gênero:</span><br>
+            <select name="gender">
+                <option value="">Selecione a opção</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </label><br>
+        <div class="row">
+            <label>
+                <span>Altura:</span><br>
+                <input type="number" name="height" required>
+            </label>
+            <label>
+                <span>Peso:</span><br>
+                <input type="number" name="weight" required>
+            </label>
+        </div><br>
+        <label>
+            <span>CPF:</span><br>
+            <input type="number" name="cpf" required>
+        </label><br>
+        <label>
+            <span>RG:</span><br>
+            <input type="number" name="rg" required>
+        </label><br>
+        <label>
+            <span>Equipe:</span><br>
+            <input type="text" name="team" required>
+        </label><br><br>
+        <button type="submit">Finalizar</button><br>
+        <div class="paginaanterior">
+            <a href="#">Voltar a página anterior</a>
+        </div>
+    </form>
+</section>
     </main>
 </body>
 </html>

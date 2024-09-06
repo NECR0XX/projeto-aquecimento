@@ -24,51 +24,80 @@ if (isset($_POST['name']) &&
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAINER</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
     <header>
 
     </header>
-    <main>
-        <section>
-            <?php if ($mensagem): ?>
-                <div id="modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
-                        <p><?= $mensagem ?></p>
-                    </div>
+
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+            cadastrar treinador
+        </div>
+        <main>
+    <section>
+        <?php if ($mensagem): ?>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                    <p><?= $mensagem ?></p>
                 </div>
-                <script>
-                    document.getElementById('modal').style.display = 'block';
-                </script>
-            <?php endif; ?>
-        </section>
-        <section>
-            <h2>Cadastrar Treinador</h2>
-                <form method="post">
+            </div>
+            <script>
+                document.getElementById('modal').style.display = 'block';
+            </script>
+        <?php endif; ?>
+    </section>
 
-                <label for="name">Nome:</label><br>
-                    <input type="text" name="name" required><br>
+    <section>
+        <form method="post">
+            <label>
+                <span>Nome:</span><br>
+                <input type="text" name="name" required>
+            </label><br>
 
-                    <label for="age">Idade:</label><br>
-                    <input type="number" name="age" required><br>
+            <label>
+                <span>Idade:</span><br>
+                <input type="number" name="age" required>
+            </label><br>
 
-                    <label for="height">Altura:</label><br>
-                    <input type="number" name="height" required><br>
+            <div class="row">
+                <label>
+                    <span>Altura:</span><br>
+                    <input type="number" name="height" required>
+                </label>
+                <label>
+                    <span>Peso:</span><br>
+                    <input type="number" name="weight" required>
+                </label>
+            </div><br>
 
-                    <label for="weight">Peso:</label><br>
-                    <input type="number" name="weight" required><br>
+            <label>
+                <span>CPF:</span><br>
+                <input type="number" name="cpf" required>
+            </label><br>
 
-                    <label for="cpf">CPF:</label><br>
-                    <input type="number" name="cpf" required><br>
+            <label>
+                <span>RG:</span><br>
+                <input type="number" name="rg" required>
+            </label><br>
 
-                    <label for="rg">RG:</label><br>
-                    <input type="number" name="rg" required><br><br>
+            <label>
+                <span>Equipe:</span><br>
+                <input type="text" name="team" required>
+            </label><br><br>
 
-                    <input type="submit" value="Finalizar"><br>
-                    <a href="#">Voltar a página anterior</a>   
-                </form>
-        </section>
-    </main>
+            <button type="submit">Finalizar</button><br>
+            <div class="paginaanterior">
+                <a href="#">Voltar à página anterior</a>
+            </div>
+        </form>
+    </section>
+</main>
 </body>
 </html>

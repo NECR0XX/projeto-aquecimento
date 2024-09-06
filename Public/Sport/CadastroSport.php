@@ -15,17 +15,27 @@ if (isset($_POST['name']) &&
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Esporte</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
     <header>
-
     </header>
-    <main>
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+            cadastrar esporte
+        </div>
+
+        <main>
         <section>
-            <h2>Cadastrar Esporte</h2>
             <form method="post">
                 <label>
                     <span>Nome:</span><br>
@@ -36,9 +46,12 @@ if (isset($_POST['name']) &&
                     <input type="text" name="category" required>
                 </label><br><br>
                 <button type="submit">Finalizar</button><br>
-                <a href="#">Voltar a página anterior</a>   
+                <div class="paginaanterior">
+                <a href="#">Voltar a página anterior</a>
+                </div>
             </form>
         </section>
     </main>
+
 </body>
 </html>
