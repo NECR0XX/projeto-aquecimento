@@ -20,11 +20,20 @@ if (isset($_POST['name']) &&
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Esporte</title>
+<<<<<<< HEAD
+=======
     <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
+>>>>>>> fd22ad0296a07ac2f9b72dfe3592cf82db648453
 </head>
 <body>
-   
     <header>
+<<<<<<< HEAD
+
+    </header>
+    <main>
+        <section>
+            <h2>Cadastrar Esporte</h2>
+=======
     </header>
     <div class="barra">
         <div class="cadastro">
@@ -37,6 +46,7 @@ if (isset($_POST['name']) &&
 
         <main>
         <section>
+>>>>>>> fd22ad0296a07ac2f9b72dfe3592cf82db648453
             <form method="post">
                 <label>
                     <span>Nome:</span><br>
@@ -53,11 +63,9 @@ if (isset($_POST['name']) &&
             </form>
         </section>
     </main>
+<<<<<<< HEAD
+=======
 
+>>>>>>> fd22ad0296a07ac2f9b72dfe3592cf82db648453
 </body>
 </html>
-
-        
-           
-           
-           

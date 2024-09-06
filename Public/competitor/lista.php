@@ -61,11 +61,16 @@ if (isset($_POST['excluir_id'])) {
         <section>
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <p>Tem certeza que deseja excluir o item?</p>
+                    <p>Deseja excluir o item?</p>
                     <div class="op">
+<<<<<<< HEAD
                         <button class="confirm" id="confirmDeleteBtn">Sim</button>
                         <button class="close" onclick="closeModal()">Cancelar</button>
                     </div>
+=======
+                    <button class="confirm" id="confirmDeleteBtn">Sim</button>
+                    <button class="close" onclick="closeModal()">Não</button></div>
+>>>>>>> e814b250915714194fdbafb851dc421044a765d5
                 </div>
             </div>
         </section>
