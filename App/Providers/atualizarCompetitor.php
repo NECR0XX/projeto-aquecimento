@@ -79,7 +79,7 @@ $team = $appointment['team'];
                 </label><br>
                 <label>
                     <span>Idade:</span><br>
-                    <input type="number" name="age" value="<?= htmlspecialchars($age) ?>" required>
+                    <input type="number" name="age" value="<?= htmlspecialchars($age) ?>" required min="0">
                 </label><br>
                 <label>
                     <span>Gênero:</span><br>
@@ -93,11 +93,11 @@ $team = $appointment['team'];
                 <div class="row">
                     <label>
                         <span>Altura:</span><br>
-                        <input type="number" name="height" value="<?= htmlspecialchars($height) ?>" required>
+                        <input type="number" name="height" value="<?= htmlspecialchars($height) ?>" min="0" required>
                     </label>
                     <label>
                         <span>Peso:</span><br>
-                        <input type="number" name="weight" value="<?= htmlspecialchars($weight) ?>" required>
+                        <input type="number" name="weight" value="<?= htmlspecialchars($weight) ?>" min="0" required>
                     </label>
                 </div><br>
                 <label>

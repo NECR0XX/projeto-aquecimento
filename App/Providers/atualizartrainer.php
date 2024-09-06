@@ -90,17 +90,17 @@ $rg = $trainer['rg'];
 
                 <label>
                     <span>Idade:</span><br>
-                    <input type="number" name="age" value="<?= htmlspecialchars($age) ?>" required>
+                    <input type="number" name="age" min="0" value="<?= htmlspecialchars($age) ?>" required>
                 </label><br>
 
                 <div class="row">
                     <label>
                         <span>Altura:</span><br>
-                        <input type="number" name="height" value="<?= htmlspecialchars($height) ?>" required>
+                        <input type="number" name="height" min="0" value="<?= htmlspecialchars($height) ?>" required>
                     </label>
                     <label>
                         <span>Peso:</span><br>
-                        <input type="number" name="weight" value="<?= htmlspecialchars($weight) ?>" required>
+                        <input type="number" name="weight" min="0" value="<?= htmlspecialchars($weight) ?>" required>
                     </label>
                 </div><br>
 

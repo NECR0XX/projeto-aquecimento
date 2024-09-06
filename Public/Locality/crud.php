@@ -65,11 +65,11 @@ if (isset($_POST['street']) &&
                 </label><br>
                 <label>
                     <span>Número:</span><br>
-                    <input type="number" name="number" required>
+                    <input type="number" name="number" min="0" required>
                 </label><br>
                 <label>
                     <span>CEP:</span><br>
-                    <input type="number" name="cep" required>
+                    <input type="number" name="cep" min="0" required>
                 </label><br>
                 <label>
                     <span>Cidade:</span><br>

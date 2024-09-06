@@ -13,7 +13,7 @@
     background-color: #F4F4F4; /*cor da parte de baixo */
     margin: 15% auto;
     padding: 10px 0px 0px 0px;    
-    width: 25%;
+    width: 45%;
     text-align: center;
     font-family: "ABeeZee", sans-serif;
     color: #5D72D0;
@@ -21,24 +21,26 @@
 }
 
 .op {
-    background-color: #F4F4F4; /*cor da parte de cima */
+    display: flex;
+    background-color: #F4F4F4;
     margin-top: auto;
+    flex-direction: column;
+    align-items: center;
 }
 
 .confirm {
-    background-color: #5D72D0; /*cor do sim*/
-    margin: 10px 10px 10px 160px;    
+    background-color: #5D72D0; /*cor do sim*/ 
     border-radius: 1px;
     border: none;
     color: #ffffff;
     padding: 5px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin: 0 0 1rem 0;
 }
 
 .close {
     background-color: #D7D7D7; /*cor do delete*/
-    margin-left: auto;
     border-radius: 1px;
     border: none;
     color: #5D72D0;
@@ -46,6 +48,7 @@
     font-size: 16px;
     cursor: pointer;
     border: 2px solid #4B68D1;
+    margin: 0 0 1rem 0;
     
 }
 

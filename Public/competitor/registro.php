@@ -58,7 +58,7 @@ if (isset($_POST['name']) &&
         </label><br>
         <label>
             <span>Idade:</span><br>
-            <input type="number" name="age" required>
+            <input type="number" name="age" min="0" required>
         </label><br>
         <label>
             <span>Gênero:</span><br>
@@ -72,20 +72,20 @@ if (isset($_POST['name']) &&
         <div class="row">
             <label>
                 <span>Altura:</span><br>
-                <input type="number" name="height" required>
+                <input type="number" name="height" min="0" required>
             </label>
             <label>
                 <span>Peso:</span><br>
-                <input type="number" name="weight" required>
+                <input type="number" name="weight" min="0" required>
             </label>
         </div><br>
         <label>
             <span>CPF:</span><br>
-            <input type="number" name="cpf" required>
+            <input type="number" name="cpf" min="0" required>
         </label><br>
         <label>
             <span>RG:</span><br>
-            <input type="number" name="rg" required>
+            <input type="number" name="rg" min="0" required>
         </label><br>
         <label>
             <span>Equipe:</span><br>
