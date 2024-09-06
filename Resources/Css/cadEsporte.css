@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 body {
     margin: 0;
-    padding-top: 95px;
+    padding-top: 270px;
     background-color: #f4f4f4;
     background: #FFFFFF;
 }
+
 
 .barra {
     background: #5D72D0;
@@ -43,23 +44,23 @@ body {
 
 .conteinerG {
     display: flex;
-    height: 700px;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 319px;
+    margin-left: 40px;
+    justify-content: space-evenly;
     flex-direction: column;
-    justify-content: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    width: 100;
-    margin: 35px 0; /* Reduz a margem superior e inferior para aproximar os containers */
+    width: 100%;
+    padding: 0 15px; /* Adiciona espaçamento nas laterais */
+    margin: 20px 0; /* Reduz a margem superior e inferior para aproximar os containers */
 }
 
 .crud1, .crud2 {
     flex: 1;
-    height: 190px;
+    height: 170px; /* Diminui a altura da caixa */
     background-color: #F4F4F4;
     color: #fff;
     display: flex;
@@ -75,5 +76,6 @@ body {
 .imagem-esporte, .imagem-competidores {
     width: 100%;
     height: auto;
-    max-width: 150px; /* Define a largura máxima das imagens */
+    max-width: 150px; /* Mantém a largura máxima das imagens */
 }
+

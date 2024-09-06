@@ -24,7 +24,7 @@
     <div class="container">
         <div class="crud2">
             <a href="link-para-crud2.html" class="link-container">
-                <img src="../Resources/Images/competidores.png" class="imagem-competidores">
+                <img src="../Resources/Images/esportes.png" class="imagem-competidores">
             </a>
         </div>  
     </div>
