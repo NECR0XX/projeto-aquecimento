@@ -21,12 +21,17 @@ if (isset($_POST['excluir_id_locality'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../Resources/Css/listaG.css">
     <title>SCAR - Listagem de Localidades</title>
 </head>
 
 <body>
     <header>
-
+        <div class="barra">
+            <div class="cadastro">
+                cadastro.com
+            </div>
+        </div>
     </header>
     <main>
         <section>
@@ -35,8 +40,6 @@ if (isset($_POST['excluir_id_locality'])) {
                 <thead>
                     <tr>
                         <th>Rua</th>
-                        <th>Bairro</th>
-                        <th>Número</th>
                         <th>CEP</th>
                         <th>Cidade</th>
                         <th>Estado</th>
@@ -48,8 +51,6 @@ if (isset($_POST['excluir_id_locality'])) {
                     <?php foreach($localities as $locality): ?>
                         <tr>
                             <td><?php echo $locality['street']; ?></td>
-                            <td><?php echo $locality['neighborhood']; ?></td>
-                            <td><?php echo $locality['number']; ?></td>
                             <td><?php echo $locality['cep']; ?></td>
                             <td><?php echo $locality['city']; ?></td>
                             <td><?php echo $locality['state']; ?></td>
@@ -62,7 +63,7 @@ if (isset($_POST['excluir_id_locality'])) {
                     <?php endforeach ?>
                 </tbody>
             </table>      
-            <a href="#">Voltar a página anterior</a>         
+            <a href="../cadLocalidade.php" class="back-button">Voltar a página anterior</a>         
         </section>
         <section>
             <div id="myModal" class="modal">

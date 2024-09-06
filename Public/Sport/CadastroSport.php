@@ -32,7 +32,7 @@ if (isset($_POST['name']) &&
         </div>
     </div>
     <div class="titulo">
-            cadastrar esporte
+            Cadastrar Esporte
         </div>
 
         <main>
@@ -48,7 +48,7 @@ if (isset($_POST['name']) &&
                 </label><br><br>
                 <button type="submit">Finalizar</button><br>
                 <div class="paginaanterior">
-                <a href="#">Voltar a página anterior</a>
+                <a href="../cadEsporte.php">Voltar a página anterior</a>
                 </div>
             </form>
         </section>

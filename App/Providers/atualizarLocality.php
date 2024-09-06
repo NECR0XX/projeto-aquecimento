@@ -61,32 +61,19 @@ $country = $locality['country'];
 </head>
 <body>
     <header>
-    </header>
-    
     <div class="barra">
         <div class="cadastro">
             cadastro.com
         </div>
     </div>
-    <div class="titulo">
-        Editar localidades
-    </div>
+    </header>
+    
+
     <main>
         <section>
-            <!-- Remova esta seção se não precisar de mensagens de erro -->
-            <!-- <?php if ($mensagem): ?>
-                <div id="modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
-                        <p><?= htmlspecialchars($mensagem) ?></p>
-                    </div>
-                </div>
-                <script>
-                    document.getElementById('modal').style.display = 'block';
-                </script>
-            <?php endif; ?> -->
-        </section>
-        <section>
+            <div class="titulo">
+                Editar localidades
+            </div>
             <form method="post">
                 <label>
                     <span>Rua:</span><br>

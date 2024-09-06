@@ -27,20 +27,18 @@ if (isset($_POST['name']) &&
     <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
-    <header>
-
-    </header>
-
+    <header>    
     <div class="barra">
         <div class="cadastro">
             cadastro.com
         </div>
     </div>
-    <div class="titulo">
-            cadastrar treinador
-        </div>
-        <main>
-    <section>
+    </header>
+    <main>
+        <section>
+        <div class="titulo">
+                cadastrar treinador
+            </div>
         <?php if ($mensagem): ?>
             <div id="modal" class="modal">
                 <div class="modal-content">
@@ -52,9 +50,6 @@ if (isset($_POST['name']) &&
                 document.getElementById('modal').style.display = 'block';
             </script>
         <?php endif; ?>
-    </section>
-
-    <section>
         <form method="post">
             <label>
                 <span>Nome:</span><br>
@@ -85,16 +80,11 @@ if (isset($_POST['name']) &&
             <label>
                 <span>RG:</span><br>
                 <input type="number" name="rg" required>
-            </label><br>
-
-            <label>
-                <span>Equipe:</span><br>
-                <input type="text" name="team" required>
             </label><br><br>
 
             <button type="submit">Finalizar</button><br>
             <div class="paginaanterior">
-                <a href="#">Voltar à página anterior</a>
+                <a href="../cadTreinadores.php">Voltar à página anterior</a>
             </div>
         </form>
     </section>

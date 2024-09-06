@@ -1,8 +1,6 @@
 <?php
 include_once '../../DB/Config.php';
 
-$mensagem = ''; // Inicializa a variável para mensagens
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_GET['id'])) {
         header('Location: ../../Public/Competitor/lista.php');
@@ -73,19 +71,6 @@ $team = $appointment['team'];
         Editar competidor
     </div>
     <main>
-        <section>
-            <?php if ($mensagem): ?>
-                <div id="modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
-                        <p><?= htmlspecialchars($mensagem) ?></p>
-                    </div>
-                </div>
-                <script>
-                    document.getElementById('modal').style.display = 'block';
-                </script>
-            <?php endif; ?>
-        </section>
         <section>
             <form method="post">
                 <label>

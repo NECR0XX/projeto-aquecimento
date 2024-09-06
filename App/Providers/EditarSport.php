@@ -61,15 +61,15 @@ $category = $appointment['category'];
             <form method="post">
                 <label>
                     <span>Nome:</span><br>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" value="<?php echo $name; ?>" required>
                 </label><br>
                 <label>
                     <span>Categoria:</span><br>
-                    <input type="text" name="category" required>
+                    <input type="text" name="category" value="<?php echo $category; ?>" required>
                 </label><br><br>
                 <button type="submit">Atualizar</button><br>
                 <div class="paginaanterior">
-                <a href="#">Voltar a página anterior</a>
+                <a href="../../Public/Sport/ListarSports.php">Voltar a página anterior</a>
                 </div>
             </form>
         </section>

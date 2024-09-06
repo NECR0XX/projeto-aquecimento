@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding-top: 270px;
+    padding: 0;
     background-color: #f4f4f4;
     background: #FFFFFF;
 }
-
 
 .barra {
     background: #5D72D0;
@@ -13,9 +16,6 @@ body {
     text-align: center;
     padding: 20px;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,17 +44,16 @@ body {
 
 .conteinerG {
     display: flex;
-    max-width: 319px;
-    margin-left: 20px;
-    justify-content: space-evenly;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 0 15px; /* Adiciona espaçamento nas laterais */
+    width: 60%;
+    padding: 15px; /* Adiciona espaçamento nas laterais */
     margin: 20px 0; /* Reduz a margem superior e inferior para aproximar os containers */
 }
 
@@ -85,3 +84,29 @@ body {
     max-width: 190px; 
 }
 
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4d59ba;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-family: "Jockey One", sans-serif;
+}
+
+.back-button:hover {
+    background-color: #404a9d;
+}
+section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    width: 100vw;
+    margin: 0 0 5rem 0;
+}

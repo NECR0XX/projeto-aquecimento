@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 body {
-    margin: 0; /* Remove as margens padrão */
-    padding-top: 95px; /* Adiciona espaço no topo para a barra de navegação */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4; /* Cor de fundo da página */
     background: #FFFFFF; /* Cor de fundo */
 }
@@ -12,9 +16,6 @@ body {
     text-align: center; /* Centraliza o texto horizontalmente */
     padding: 20px; /* Espaçamento interno */
     width: 100%; /* Ocupa 100% da largura da tela */
-    position: fixed; /* Fica fixa no topo da tela */
-    top: 0; /* Alinha no topo */
-    left: 0; /* Alinha à esquerda */
     display: flex; /* Usa flexbox para layout */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
@@ -107,17 +108,27 @@ body {
 .titulo {
     text-align: center;
     font-family:  "Jockey One", sans-serif;
-    font-size:29px;
+    font-size: 2.5rem;
     color:#5D72D0;
     margin-top: 16%;
 }
 /* Estilos gerais para o formulário */
+header {
+    width: 100vw;
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+section {
+    width: 100%;
+}
 form {
     max-width: 500px; /* Largura máxima do formulário */
     margin: 0 auto; /* Centraliza o formulário horizontalmente */
     padding: 20px; /* Espaçamento interno do formulário */
     border-radius: 8px; /* Cantos arredondados */
-    margin-top: 13%;
 }
 
 /* Estilo para cada label dentro do formulário */
@@ -132,18 +143,39 @@ form label span {
     display: block; /* Faz com que o texto do label ocupe uma linha inteira */
     margin-bottom: 5px; /* Espaçamento inferior do texto */
     color: #5D72D0; /* Cor do texto */
-    font-size: 22px; /* Tamanho da fonte */
+    font-size: 1.8rem; /* Tamanho da fonte */
     font-family: "Jockey One", sans-serif; /* Fonte */
 }
 /* Estilo para os inputs de texto */
-form input[type="text"],
-form input[type="number"] {
+form select {
+    font-size: 1.2rem;
     width: 100%; /* Faz com que os inputs ocupem toda a largura disponível */
-    padding: 10px; /* Espaçamento interno do input */
+    padding: 5px; /* Espaçamento interno do input */
     border: 1px solid #ccc; /* Borda do input */
     border-radius: 4px; /* Cantos arredondados dos inputs */
     box-sizing: border-box; /* Inclui o padding e a borda na largura total */
-    height: 40px; /* Altura dos inputs */
+    height: 45px; /* Altura dos inputs */
+    color: #333; /* Cor do texto dentro do input */
+    background-color: #F1F1F1; /* Cor de fundo do input */
+    appearance: none;
+}
+form select:focus {
+    width: auto; /* Ajusta a largura da lista suspensa */
+}
+
+/* Apenas para navegadores Webkit (Chrome, Safari) */
+form select::-webkit-dropdown-menu {
+    width: 150px; /* Define a largura do dropdown */
+}
+form input[type="text"],
+form input[type="number"] {
+    font-size: 1.4rem;
+    width: 100%; /* Faz com que os inputs ocupem toda a largura disponível */
+    padding: 5px; /* Espaçamento interno do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 4px; /* Cantos arredondados dos inputs */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+    height: 45px; /* Altura dos inputs */
     color: #333; /* Cor do texto dentro do input */
     background-color: #F1F1F1; /* Cor de fundo do input */
 }

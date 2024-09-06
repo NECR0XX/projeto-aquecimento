@@ -29,18 +29,17 @@ if (isset($_POST['name']) &&
 </head>
 <body>
     <header>
+        <div class="barra">
+            <div class="cadastro">
+                cadastro.com
+            </div>
+        </div>
     </header>
-    <div class="barra">
-        <div class="cadastro">
-            cadastro.com
-        </div>
-    </div>
-    <div class="titulo">
-            cadastrar competidor
-        </div>
-
         <main>
         <section>
+        <div class="titulo">
+            cadastrar competidor
+        </div>
             <?php if ($mensagem): ?>
                 <div id="modal" class="modal">
                     <div class="modal-content">
@@ -52,8 +51,6 @@ if (isset($_POST['name']) &&
                     document.getElementById('modal').style.display = 'block';
                 </script>
             <?php endif; ?>
-        </section>
-        <section>
     <form method="post">
         <label>
             <span>Nome:</span><br>
@@ -96,7 +93,7 @@ if (isset($_POST['name']) &&
         </label><br><br>
         <button type="submit">Finalizar</button><br>
         <div class="paginaanterior">
-            <a href="#">Voltar a página anterior</a>
+            <a href="../cadCompetidor.php">Voltar a página anterior</a>
         </div>
     </form>
 </section>

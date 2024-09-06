@@ -12,11 +12,16 @@ $esportes = $esporteController->listarEsportes();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    <link rel="stylesheet" href="../../Resources/Css/lista.css">
     <title>Listar Esportes</title>
 </head>
 <body>
     <header>
-
+        <div class="barra">
+            <div class="cadastro">
+                cadastro.com
+            </div>
+        </div>
     </header>
     <main>
     <section>
@@ -42,7 +47,7 @@ $esportes = $esporteController->listarEsportes();
                     <?php endforeach ?>
                 </tbody>
             </table>      
-            <a href="#">Voltar a página anterior</a>         
+            <a href="../cadEsporte.php" class="back-button">Voltar a página anterior</a>        
         </section>
         <section>
             <div id="myModal" class="modal">

@@ -59,17 +59,18 @@ $rg = $trainer['rg'];
 </head>
 <body>
     <header>
-    </header>
     <div class="barra">
         <div class="cadastro">
             cadastro.com
         </div>
     </div>
-    <div class="titulo">
-        Editar treinador
-    </div>
+    </header>
+
     <main>
         <section>
+            <div class="titulo">
+                Editar treinador
+            </div>
             <?php if ($mensagem): ?>
                 <div id="modal" class="modal">
                     <div class="modal-content">
@@ -81,8 +82,6 @@ $rg = $trainer['rg'];
                     document.getElementById('modal').style.display = 'block';
                 </script>
             <?php endif; ?>
-        </section>
-        <section>
             <form method="post">
                 <label>
                     <span>Nome:</span><br>

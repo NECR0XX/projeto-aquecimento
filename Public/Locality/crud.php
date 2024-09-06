@@ -32,18 +32,17 @@ if (isset($_POST['street']) &&
 </head>
 <body>
     <header>
-    </header>
-    
     <div class="barra">
         <div class="cadastro">
             cadastro.com
         </div>
     </div>
-    <div class="titulo">
-            cadastrar localidades
-        </div>
-    <main>
-        <section>
+    </header>
+    <section>
+            <div class="titulo">
+                    cadastrar localidades
+                </div>
+            <main>
         <?php if ($mensagem): ?>
             <div id="modal" class="modal">
                 <div class="modal-content">
@@ -55,8 +54,6 @@ if (isset($_POST['street']) &&
                 document.getElementById('modal').style.display = 'block';
             </script>
         <?php endif; ?>
-        </section>
-        <section>
             <form method="post">
                 <label>
                     <span>Rua:</span><br>
@@ -88,7 +85,7 @@ if (isset($_POST['street']) &&
                 </label><br><br>
                 <button type="submit">Finalizar</button><br>
             <div class="paginaanterior">
-                <a href="#">Voltar à página anterior</a>
+                <a href="../cadLocalidade.php">Voltar à página anterior</a>
             </div>
             </form>
         </section>

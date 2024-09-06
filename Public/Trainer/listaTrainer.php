@@ -6,7 +6,7 @@ $trainerController = new trainerController($pdo);
 $trainers = $trainerController->listarTrainers();
 
 if (isset($_POST['excluir_id'])) {
-    $trainerController->deletarTrainer($_POST['excluir_id']);
+    $trainerController->excluirTrainer($_POST['excluir_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -15,11 +15,17 @@ if (isset($_POST['excluir_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Resources/Css/styledelete.css">
+    
+    <link rel="stylesheet" href="../../Resources/Css/listaG.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-
+        <div class="barra">
+            <div class="cadastro">
+                cadastro.com
+            </div>
+        </div>
     </header>
     <main>
         <section>
@@ -56,7 +62,7 @@ if (isset($_POST['excluir_id'])) {
                 <?php endforeach; ?>
                 <tbody>
             </table>
-            <a href="#">Voltar a página anterior</a>
+            <a href="../cadTreinadores.php" class="back-button">Voltar a página anterior</a>
         </section>
         <section>
             <div id="myModal" class="modal">
