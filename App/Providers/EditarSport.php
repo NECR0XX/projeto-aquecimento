@@ -37,27 +37,43 @@ $category = $appointment['category'];
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizar</title>
+    <title>Cadastrar Esporte</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
-    <main>
+    <header>
+    </header>
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+            Editar esporte
+        </div>
+
+        <main>
         <section>
-            <h2>Editar Treinador</h2>
             <form method="post">
-                <label for="name">Nome:</label><br>
-                <input type="text" name="name" value="<?php echo $name; ?>" required></br>
-
-                <label for="category">Categoria:</label><br>
-                <input type="text" name="category" value="<?php echo $category; ?>" required></br>
-
+                <label>
+                    <span>Nome:</span><br>
+                    <input type="text" name="name" required>
+                </label><br>
+                <label>
+                    <span>Categoria:</span><br>
+                    <input type="text" name="category" required>
+                </label><br><br>
                 <button type="submit">Atualizar</button><br>
-                <a href="../../Public/Sport/ListarSports.php">Voltar à página anterior</a>
+                <div class="paginaanterior">
+                <a href="#">Voltar a página anterior</a>
+                </div>
             </form>
         </section>
     </main>
+
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 include_once '../../DB/Config.php';
 
+// Inicializa a variável para mensagens
+$mensagem = '';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_GET['id'])) {
         header('Location: ../../Public/Trainer/listaTrainer.php');
@@ -8,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     $id = $_GET['id'];
-
     $name = $_POST['name'];
     $age = $_POST['age'];
     $height = $_POST['height'];
@@ -16,8 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cpf = $_POST['cpf'];
     $rg = $_POST['rg'];
 
+    // Atualiza o treinador no banco de dados
     $stmt = $pdo->prepare('UPDATE trainer SET name = ?, age = ?, height = ?, weight = ?, cpf = ?, rg = ? WHERE id = ?');
     $stmt->execute([$name, $age, $height, $weight, $cpf, $rg, $id]);
+
+    // Redireciona após a atualização
     header('Location: ../../Public/Trainer/listaTrainer.php');
     exit;
 }
@@ -26,56 +31,94 @@ if (!isset($_GET['id'])) {
     header('Location: ../../Public/Trainer/listaTrainer.php');
     exit;
 }
-$id = $_GET['id'];
 
+$id = $_GET['id'];
 $stmt = $pdo->prepare('SELECT * FROM trainer WHERE id = ?');
 $stmt->execute([$id]);
-$appointment = $stmt->fetch(PDO::FETCH_ASSOC);
+$trainer = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$appointment) {
+if (!$trainer) {
     header('Location: ../../Public/Trainer/listaTrainer.php');
     exit;   
 }
-$name = $appointment['name'];
-$age = $appointment['age'];
-$height = $appointment['height'];
-$weight = $appointment['weight'];
-$cpf = $appointment['cpf'];
-$rg = $appointment['rg'];
 
+$name = $trainer['name'];
+$age = $trainer['age'];
+$height = $trainer['height'];
+$weight = $trainer['weight'];
+$cpf = $trainer['cpf'];
+$rg = $trainer['rg'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualizar</title>
+    <title>Editar Treinador</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
+    <header>
+    </header>
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+        Editar treinador
+    </div>
     <main>
         <section>
-            <h2>Editar Treinador</h2>
+            <?php if ($mensagem): ?>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                        <p><?= htmlspecialchars($mensagem) ?></p>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('modal').style.display = 'block';
+                </script>
+            <?php endif; ?>
+        </section>
+        <section>
             <form method="post">
-                <label for="name">Nome:</label><br>
-                <input type="text" name="name" value="<?php echo $name; ?>" required></br>
+                <label>
+                    <span>Nome:</span><br>
+                    <input type="text" name="name" value="<?= htmlspecialchars($name) ?>" required>
+                </label><br>
 
-                <label for="age">Idade:</label><br>
-                <input type="number" name="age" value="<?php echo $age; ?>" required></br>
+                <label>
+                    <span>Idade:</span><br>
+                    <input type="number" name="age" value="<?= htmlspecialchars($age) ?>" required>
+                </label><br>
 
-                <label for="height">Altura:</label><br>
-                <input type="number" name="height" value="<?php echo $height; ?>" required></br>
+                <div class="row">
+                    <label>
+                        <span>Altura:</span><br>
+                        <input type="number" name="height" value="<?= htmlspecialchars($height) ?>" required>
+                    </label>
+                    <label>
+                        <span>Peso:</span><br>
+                        <input type="number" name="weight" value="<?= htmlspecialchars($weight) ?>" required>
+                    </label>
+                </div><br>
 
-                <label for="weight">Peso:</label><br>
-                <input type="number" name="weight" value="<?php echo $weight; ?>" required></br>
+                <label>
+                    <span>CPF:</span><br>
+                    <input type="text" name="cpf" value="<?= htmlspecialchars($cpf) ?>" required>
+                </label><br>
 
-                <label for="cpf">CPF:</label><br>
-                <input type="number" name="cpf" value="<?php echo $cpf; ?>" required></br>
-
-                <label for="rg">RG:</label><br>
-                <input type="number" name="rg" value="<?php echo $rg; ?>" required></br><br>
+                <label>
+                    <span>RG:</span><br>
+                    <input type="text" name="rg" value="<?= htmlspecialchars($rg) ?>" required>
+                </label><br>
 
                 <button type="submit">Atualizar</button><br>
-                <a href="../../Public/Trainer/listaTrainer.php">Voltar à página anterior</a>
+                <div class="paginaanterior">
+                    <a href="../../Public/Trainer/listaTrainer.php">Voltar à página anterior</a>
+                </div>
             </form>
         </section>
     </main>

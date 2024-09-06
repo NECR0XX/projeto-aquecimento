@@ -52,44 +52,74 @@ $country = $locality['country'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../../public/css/style3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Resources/Css/adm3.css">
     <link rel="stylesheet" href="../../Resources/Css/stylecrud.css">
-    <title>Atualizar Localidade</title>
+    <link rel="stylesheet" href="../../Resources/Css/msgcadastro.css">
+    <link rel="stylesheet" href="../../Resources/Css/stylereg.css">
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
+    <title>Gerenciamento de Localidades</title>
 </head>
 <body>
     <header>
-
     </header>
+    
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+        Editar localidades
+    </div>
     <main>
         <section>
-            <h2>Editar Localidades</h2>
+            <!-- Remova esta seção se não precisar de mensagens de erro -->
+            <!-- <?php if ($mensagem): ?>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                        <p><?= htmlspecialchars($mensagem) ?></p>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('modal').style.display = 'block';
+                </script>
+            <?php endif; ?> -->
+        </section>
+        <section>
             <form method="post">
-                <label for="street">Rua:</label><br>
-                <input type="text" name="street" value="<?php echo $street; ?>" required><br>
-
-                <label for="neighborhood">Bairro:</label><br>
-                <input type="text" name="neighborhood" value="<?php echo $neighborhood; ?>" required><br>
-
-                <label for="number">Número:</label><br>
-                <input type="number" name="number" value="<?php echo $number; ?>" required><br>
-
-                <label for="cep">CEP:</label><br>
-                <input type="number" name="cep" value="<?php echo $cep; ?>" required><br>
-
-                <label for="city">Cidade:</label><br>
-                <input type="text" name="city" value="<?php echo $city; ?>" required><br>
-
-                <label for="state">Estado:</label><br>
-                <input type="text" name="state" value="<?php echo $state; ?>" required><br>
-
-                <label for="country">País:</label><br>
-                <input type="text" name="country" value="<?php echo $country; ?>" required><br><br>
-
+                <label>
+                    <span>Rua:</span><br>
+                    <input type="text" name="street" value="<?= htmlspecialchars($street) ?>" required>
+                </label><br>
+                <label>
+                    <span>Bairro:</span><br>
+                    <input type="text" name="neighborhood" value="<?= htmlspecialchars($neighborhood) ?>" required>
+                </label><br>
+                <label>
+                    <span>Número:</span><br>
+                    <input type="text" name="number" value="<?= htmlspecialchars($number) ?>" required>
+                </label><br>
+                <label>
+                    <span>CEP:</span><br>
+                    <input type="text" name="cep" value="<?= htmlspecialchars($cep) ?>" required>
+                </label><br>
+                <label>
+                    <span>Cidade:</span><br>
+                    <input type="text" name="city" value="<?= htmlspecialchars($city) ?>" required>
+                </label><br>
+                <label>
+                    <span>Estado:</span><br>
+                    <input type="text" name="state" value="<?= htmlspecialchars($state) ?>" required>
+                </label><br>
+                <label>
+                    <span>País:</span><br>
+                    <input type="text" name="country" value="<?= htmlspecialchars($country) ?>" required>
+                </label><br><br>
                 <button type="submit">Atualizar</button><br>
-                <a href="../../Public/Locality/index.php">Voltar</a>
+                <div class="paginaanterior">
+                    <a href="../../Public/Locality/index.php">Voltar à página anterior</a>
+                </div>
             </form>
         </section>
     </main>

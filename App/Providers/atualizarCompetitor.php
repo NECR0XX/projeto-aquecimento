@@ -1,12 +1,15 @@
 <?php
 include_once '../../DB/Config.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if(!isset($_GET['id'])) {
+$mensagem = ''; // Inicializa a variável para mensagens
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!isset($_GET['id'])) {
         header('Location: ../../Public/Competitor/lista.php');
         exit;
     }
-    $id =$_GET['id'];
+
+    $id = $_GET['id'];
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -16,9 +19,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $rg = $_POST['rg'];
     $team = $_POST['team'];
 
+    // Atualiza o competidor no banco de dados
     $stmt = $pdo->prepare('UPDATE competitor SET name = ?, age = ?, gender = ?, height = ?, weight = ?, cpf = ?, rg = ?, team = ? WHERE id = ?');
     $stmt->execute([$name, $age, $gender, $height, $weight, $cpf, $rg, $team, $id]);
-    header('location: ../../Public/Competitor/lista.php');
+
+    // Redireciona após a atualização
+    header('Location: ../../Public/Competitor/lista.php');
     exit;
 }
 
@@ -26,6 +32,7 @@ if (!isset($_GET['id'])) {
     header('Location: ../../Public/Competitor/lista.php');
     exit;
 }
+
 $id = $_GET['id'];
 $stmt = $pdo->prepare('SELECT * FROM competitor WHERE id = ?');
 $stmt->execute([$id]);
@@ -35,6 +42,8 @@ if (!$appointment) {
     header('Location: ../../Public/Competitor/lista.php');
     exit;
 }
+
+// Preenche as variáveis com os dados do competidor
 $name = $appointment['name'];
 $age = $appointment['age'];
 $gender = $appointment['gender'];
@@ -49,55 +58,79 @@ $team = $appointment['team'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Competidor</title>
+    <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
     <header>
-
     </header>
+    <div class="barra">
+        <div class="cadastro">
+            cadastro.com
+        </div>
+    </div>
+    <div class="titulo">
+        Editar competidor
+    </div>
     <main>
         <section>
-            <h2>Editar Competidor</h2>
+            <?php if ($mensagem): ?>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+                        <p><?= htmlspecialchars($mensagem) ?></p>
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('modal').style.display = 'block';
+                </script>
+            <?php endif; ?>
+        </section>
+        <section>
             <form method="post">
-                <label for="name">
+                <label>
                     <span>Nome:</span><br>
-                    <input type="text" name="name" value="<?php echo $name ?>" required>
+                    <input type="text" name="name" value="<?= htmlspecialchars($name) ?>" required>
                 </label><br>
-                <label for="age">
+                <label>
                     <span>Idade:</span><br>
-                    <input type="number" name="age" value="<?php echo $age ?>" required>
+                    <input type="number" name="age" value="<?= htmlspecialchars($age) ?>" required>
                 </label><br>
-                <label for="gender">
+                <label>
                     <span>Gênero:</span><br>
-                    <select name="gender">
-                        <option value="<?php echo $gender ?>"><?php echo $gender ?></option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
+                    <select name="gender" required>
+                        <option value="">Selecione a opção</option>
+                        <option value="Masculino" <?= $gender == 'Masculino' ? 'selected' : '' ?>>Masculino</option>
+                        <option value="Feminino" <?= $gender == 'Feminino' ? 'selected' : '' ?>>Feminino</option>
+                        <option value="Outro" <?= $gender == 'Outro' ? 'selected' : '' ?>>Outro</option>
                     </select>
                 </label><br>
-                <label for="height">
-                    <span>Altura:</span><br>
-                    <input type="number" name="height" value="<?php echo $height ?>" required>
-                </label><br>
-                <label for="weight">
-                    <span>Peso:</span><br>
-                    <input type="number" name="weight" value="<?php echo $weight ?>" required>
-                </label><br>
-                <label for="cpf">
+                <div class="row">
+                    <label>
+                        <span>Altura:</span><br>
+                        <input type="number" name="height" value="<?= htmlspecialchars($height) ?>" required>
+                    </label>
+                    <label>
+                        <span>Peso:</span><br>
+                        <input type="number" name="weight" value="<?= htmlspecialchars($weight) ?>" required>
+                    </label>
+                </div><br>
+                <label>
                     <span>CPF:</span><br>
-                    <input type="number" name="cpf" value="<?php echo $cpf ?>" required>
+                    <input type="text" name="cpf" value="<?= htmlspecialchars($cpf) ?>" required>
                 </label><br>
-                <label for="rg">
+                <label>
                     <span>RG:</span><br>
-                    <input type="number" name="rg" value="<?php echo $rg ?>" required>
+                    <input type="text" name="rg" value="<?= htmlspecialchars($rg) ?>" required>
                 </label><br>
-                <label for="team">
+                <label>
                     <span>Equipe:</span><br>
-                    <input type="text" name="team" value="<?php echo $team ?>" required>
+                    <input type="text" name="team" value="<?= htmlspecialchars($team) ?>" required>
                 </label><br><br>
                 <button type="submit">Atualizar</button><br>
-                <a href="../../Public/Competitor/lista.php">Voltar à página anterior</a>
+                <div class="paginaanterior">
+                    <a href="../../Public/Competitor/lista.php">Voltar à página anterior</a>
+                </div>
             </form>
         </section>
     </main>

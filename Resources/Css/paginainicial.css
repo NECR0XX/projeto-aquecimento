@@ -104,3 +104,108 @@ body {
     max-width: 500px; /* Define uma largura máxima */
     margin-top: -1%;
 }
+.titulo {
+    text-align: center;
+    font-family:  "Jockey One", sans-serif;
+    font-size:29px;
+    color:#5D72D0;
+    margin-top: 16%;
+}
+/* Estilos gerais para o formulário */
+form {
+    max-width: 500px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-top: 13%;
+}
+
+/* Estilo para cada label dentro do formulário */
+form label {
+    display: block; /* Faz com que os labels ocupem uma linha inteira */
+    margin-bottom: 15px; /* Espaçamento inferior dos labels */
+}
+
+/* Estilo para o texto dentro do label */
+form label span {
+    font-weight: bold; /* Deixa o texto do label em negrito */
+    display: block; /* Faz com que o texto do label ocupe uma linha inteira */
+    margin-bottom: 5px; /* Espaçamento inferior do texto */
+    color: #5D72D0; /* Cor do texto */
+    font-size: 22px; /* Tamanho da fonte */
+    font-family: "Jockey One", sans-serif; /* Fonte */
+}
+/* Estilo para os inputs de texto */
+form input[type="text"],
+form input[type="number"] {
+    width: 100%; /* Faz com que os inputs ocupem toda a largura disponível */
+    padding: 10px; /* Espaçamento interno do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 4px; /* Cantos arredondados dos inputs */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+    height: 40px; /* Altura dos inputs */
+    color: #333; /* Cor do texto dentro do input */
+    background-color: #F1F1F1; /* Cor de fundo do input */
+}
+
+/* Estilo para o botão de envio */
+form button[type="submit"] {
+    background-color: #5D72D0; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 4px; /* Cantos arredondados do botão */
+    cursor: pointer; /* Muda o cursor para uma mãozinha ao passar sobre o botão */
+    font-size: 22px; /* Tamanho da fonte do texto do botão */
+    font-family: "Jockey One", sans-serif; /* Fonte do botão */
+    height: 50px; /* Altura do botão */
+    margin-left: 33%; /* Margem esquerda do botão */
+    width: 120px; /* Largura do botão */
+    margin-top: 10%; /* Margem superior do botão */
+}
+
+/* Estilo para o botão de envio ao passar o mouse */
+form button[type="submit"]:hover {
+    background-color: #45a049; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilo para o link */
+form a {
+    display: inline-block; /* Faz com que o link ocupe somente o espaço necessário */
+    margin-top: 15px; /* Espaçamento superior do link */
+    color: #007bff; /* Cor do texto do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+/* Estilo para o link ao passar o mouse */
+form a:hover {
+    text-decoration: underline; /* Adiciona o sublinhado ao passar o mouse */
+}
+.paginaanterior {
+    text-decoration: none;
+    text-align: center;
+    font-family:  "Jockey One", sans-serif;
+    font-size: 18px;
+}
+/* Estilo para o contêiner da linha */
+.row {
+    display: flex; /* Ativa o flexbox para o contêiner */
+    gap: 20px; /* Espaçamento entre os campos */
+}
+
+/* Estilo para os labels dentro do contêiner da linha */
+.row label {
+    flex: 1; /* Faz com que os labels ocupem a mesma largura */
+}
+
+/* Estilo para os inputs de número dentro da linha */
+.row input[type="number"] {
+    width: 100%; /* Faz com que os inputs ocupem toda a largura disponível no label */
+    padding: 10px; /* Espaçamento interno do input */
+    border: 1px solid #ccc; /* Borda do input */
+    border-radius: 4px; /* Cantos arredondados dos inputs */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+    height: 40px; /* Altura dos inputs */
+    color: #333; /* Cor do texto dentro do input */
+    background-color: #F1F1F1; /* Cor de fundo do input */
+}
