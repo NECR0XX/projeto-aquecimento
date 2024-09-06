@@ -1,12 +1,12 @@
 <?php
 require_once '../../DB/Config.php';
-require_once '..\..\App\Controller\LocalityController.php';
+require_once '..\..\App\Controller\CompetitorController.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $localityController = new LocalityController($pdo);
+    $competitorController = new CompetitorController($pdo);
 
     try {
-        $localityController->excluirLocality($id);
+        $competitorController->deletarCompetitor($id);
         echo "success";
     } catch (Exception $e) {
         echo "error";

@@ -1,12 +1,12 @@
 <?php
 require_once '../../DB/Config.php';
-require_once '..\..\App\Controller\LocalityController.php';
+require_once '../../App/Controller/SportController.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $localityController = new LocalityController($pdo);
+    $esporteController = new EsporteController($pdo);
 
     try {
-        $localityController->excluirLocality($id);
+        $esporteController->excluirEsporte($id);
         echo "success";
     } catch (Exception $e) {
         echo "error";

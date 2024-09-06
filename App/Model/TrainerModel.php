@@ -15,10 +15,25 @@ class TrainerModel {
     }
     
     // Método para listar Treinadores
-    public function listarTrainer() {
+    public function listarTrainers() {
         $sql = "SELECT * FROM trainer";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    // Model para atualizar Treinadores
+    public function atualizarTrainer($id, $name, $age, $height, $weight, $cpf, $rg){
+        $sql = "UPDATE trainer SET name = ?, age = ?, height = ?, weight = ?, cpf = ?, rg = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$name, $age, $height, $weight, $cpf, $rg]);
+        header("Location:");
+        exit;
+    }
+    
+    // Model para deletar Locality
+    public function excluirTrainer($id) {
+        $sql = "DELETE FROM trainer WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
     }
 }
 ?>
