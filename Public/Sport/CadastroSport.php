@@ -23,6 +23,7 @@ if (isset($_POST['name']) &&
     <link rel="stylesheet" href="../../Resources/Css/paginainicial.css">
 </head>
 <body>
+   
     <header>
     </header>
     <div class="barra">
@@ -55,3 +56,8 @@ if (isset($_POST['name']) &&
 
 </body>
 </html>
+
+        
+           
+           
+           

@@ -16,7 +16,7 @@
     <div class="container">
         <div class="crud1">
             <a href="link-para-crud1.html" class="link-container">
-                <img src="../Resources/Images/cadastraresportes.png" class="imgcadastro">
+                <img src="../Resources/Images/cadastrartreinadores.png" class="imgcadastro">
             </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="crud2">
             <a href="link-para-crud2.html" class="link-container">
-                <img src="../Resources/Images/listaresporte.png" class="imagem-competidores">
+                <img src="../Resources/Images/listartreinadores.png" class="imagem-competidores">
             </a>
         </div>  
     </div>
