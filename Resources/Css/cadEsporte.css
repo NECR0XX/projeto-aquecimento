@@ -45,7 +45,7 @@ body {
 .conteinerG {
     display: flex;
     max-width: 319px;
-    margin-left: 40px;
+    margin-left: 20px;
     justify-content: space-evenly;
     flex-direction: column;
 }
@@ -77,5 +77,11 @@ body {
     width: 100%;
     height: auto;
     max-width: 150px; /* Mantém a largura máxima das imagens */
+}
+
+.imgcadastro{
+    width: 100%;
+    height: auto;
+    max-width: 190px; 
 }
 
