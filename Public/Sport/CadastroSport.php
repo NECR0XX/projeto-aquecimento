@@ -18,19 +18,13 @@ if (isset($_POST['name']) &&
 <html>
 <head>
     <title>Cadastrar Esporte</title>
-    <link rel="stylesheet" href="Resources/Css/cadastro.css">
 </head>
 <body>
-   
     <header>
- 
+
     </header>
     <main>
-        
         <section>
-            <div class="container">
-    <div class="form-box">
-    <h1>cadastro.com</h1>
             <h2>Cadastrar Esporte</h2>
             <form method="post">
                 <label>
@@ -46,12 +40,5 @@ if (isset($_POST['name']) &&
             </form>
         </section>
     </main>
-</div>
-</div> 
 </body>
 </html>
-
-        
-           
-           
-           

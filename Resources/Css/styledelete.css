@@ -10,39 +10,43 @@
 }
 
 .modal-content {
-    background-color: #FFFFF9;
+    background-color: #F4F4F4; /*cor da parte de baixo */
     margin: 15% auto;
     padding: 10px 0px 0px 0px;    
     width: 25%;
     text-align: center;
     font-family: "ABeeZee", sans-serif;
+    color: #5D72D0;
+   
 }
 
 .op {
-    background-color: #EDEDED;
+    background-color: #F4F4F4; /*cor da parte de cima */
     margin-top: auto;
 }
 
 .confirm {
-    background-color: #D7D7D7;
+    background-color: #5D72D0; /*cor do sim*/
     margin: 10px 10px 10px 160px;    
     border-radius: 1px;
     border: none;
-    color: #505050;
+    color: #ffffff;
     padding: 5px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
 .close {
-    background-color: #D7D7D7;
+    background-color: #D7D7D7; /*cor do delete*/
     margin-left: auto;
     border-radius: 1px;
     border: none;
-    color: #505050;
+    color: #5D72D0;
     padding: 5px 20px;
     font-size: 16px;
     cursor: pointer;
+    border: 2px solid #4B68D1;
+    
 }
 
 .confirm:hover {
@@ -50,12 +54,13 @@
 }
 
 .confirm:active {
-    background-color: #909090 ;
+    background-color: #5D72D0 ; /*muda a cor do clique*/
 }
+
 .close:hover {
     background-color: rgb(207, 207, 207); /* Muda a cor de fundo no hover */
 }
 
 .close:active {
-    background-color: #909090 ;
+    background-color: #5D72D0 ; /*muda a cor do clique*/
 }
